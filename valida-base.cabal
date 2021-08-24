@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           valida-base
-version:        0.1.0
+version:        0.1.1
 synopsis:       Simple applicative validation for product types, batteries included!
 description:    This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida-base#readme>!
 category:       Validation, Data
