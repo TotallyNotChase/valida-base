@@ -1,4 +1,4 @@
-# Changelog for valida
+# Changelog for valida-base
 
 ## Unreleased changes
 
