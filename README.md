@@ -174,7 +174,7 @@ Failure ()
 ```
 
 ## Re-assigning errors
-Using the [`label`](https://hackage.haskell.org/package/valida-base/docs/Valida.html#v:label)/[`<?>`](https://hackage.haskell.org/package/valida-base/docs/Valida.html#v:-60--63--62-) and [`labelV`](https://hackage.haskell.org/package/valida/docs/Valida.html#v:labelV)/[`<??>`](https://hackage.haskell.org/package/valida/docs/Valida.html#v:-60--63--63--62-) functions, you can use override the errors `ValidationRule`s and `Validator`s yield.
+Using the [`label`](https://hackage.haskell.org/package/valida-base/docs/Valida.html#v:label)/[`<?>`](https://hackage.haskell.org/package/valida-base/docs/Valida.html#v:-60--63--62-) and [`labelV`](https://hackage.haskell.org/package/valida-base/docs/Valida.html#v:labelV)/[`<??>`](https://hackage.haskell.org/package/valida-base/docs/Valida.html#v:-60--63--63--62-) functions, you can use override the errors `ValidationRule`s and `Validator`s yield.
 
 For example, to re assign the error on a `ValidationRule`-
 ```hs
