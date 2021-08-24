@@ -1,0 +1,54 @@
+name:                valida-base
+version:             0.1.0
+github:              "TotallyNotChase/valida-base"
+license:             MIT
+author:              "Chase"
+maintainer:          "totallynotchase42@gmail.com"
+copyright:           "TotallyNotChase"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+synopsis:            Simple applicative validation for product types, batteries included!
+category:            Validation, Data
+
+description:
+  This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida#readme>!
+
+dependencies:
+- base >= 4.13 && < 5
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-uni-patterns
+- -Wmissed-specialisations
+- -Wmissing-export-lists
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+  exposed-modules:
+  - Valida
+  - Valida.Combinators
+  ghc-options:
+  - -O2
+
+tests:
+  valida-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tasty
+    - tasty-hunit
+    - tasty-quickcheck
+    - tasty-smallcheck
+    - smallcheck
+    - valida-base
