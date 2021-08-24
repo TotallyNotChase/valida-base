@@ -14,7 +14,7 @@ synopsis:            Simple applicative validation for product types, batteries 
 category:            Validation, Data
 
 description:
-  This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida#readme>!
+  This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida-base#readme>!
 
 dependencies:
 - base >= 4.13 && < 5

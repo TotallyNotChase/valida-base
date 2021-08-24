@@ -7,7 +7,7 @@ cabal-version: 1.12
 name:           valida-base
 version:        0.1.0
 synopsis:       Simple applicative validation for product types, batteries included!
-description:    This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida#readme>!
+description:    This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida-base#readme>!
 category:       Validation, Data
 homepage:       https://github.com/TotallyNotChase/valida-base#readme
 bug-reports:    https://github.com/TotallyNotChase/valida-base/issues
