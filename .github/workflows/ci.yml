@@ -15,11 +15,14 @@ jobs:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
         ghc:
+          - '8.6'
           - '8.8'
           - '8.10'
           - latest
         include:
           # Include a cabal version to associate with a ghc version for tests.
+          - ghc: '8.6'
+            cabal: '3.0'
           - ghc: '8.8'
             cabal: '3.0'
           - ghc: '8.10'
@@ -73,12 +76,18 @@ jobs:
       matrix:
         os: [ubuntu-latest, macOS-latest, windows-latest]
         resolver:
+          - 'lts-14.27'
+          - 'lts-16.31'
           - 'lts-17.15'
           # Use 18.6 for all OS, 18.7 for all but windows - see stackage/#6176.
           - 'lts-18.6'
           - 'lts-18.7'
         include:
           # Specific stack config files for specific resolver snapshots.
+          - resolver: 'lts-14.27'
+            conffile: 'stack-lts14.yaml'
+          - resolver: 'lts-16.31'
+            conffile: 'stack-lts16.yaml'
           - resolver: 'lts-17.15'
             conffile: 'stack.yaml'
           - resolver: 'lts-18.6'
@@ -113,11 +122,11 @@ jobs:
 
     - name: Install dependencies
       run: |
-        stack build --verbose --test --bench --no-run-tests --no-run-benchmarks --only-dependencies --stack-yaml ${{ matrix.conffile }}
+        stack build --test --bench --no-run-tests --no-run-benchmarks --only-dependencies --stack-yaml ${{ matrix.conffile }}
 
     - name: Build
       run: |
-        stack build --verbose --test --bench --haddock --no-run-tests --no-run-benchmarks --no-haddock-deps --stack-yaml ${{ matrix.conffile }}
+        stack build --test --bench --haddock --no-run-tests --no-run-benchmarks --no-haddock-deps --stack-yaml ${{ matrix.conffile }}
 
     - name: Test
       run: |
