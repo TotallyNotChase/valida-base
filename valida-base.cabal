@@ -5,7 +5,7 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           valida-base
-version:        0.1.1
+version:        0.2.0
 synopsis:       Simple applicative validation for product types, batteries included!
 description:    This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida-base#readme>!
 category:       Validation, Data
@@ -40,7 +40,7 @@ library
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-uni-patterns -Wmissed-specialisations -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -O2
   build-depends:
-      base >=4.13 && <5
+      base >=4.12 && <5
   default-language: Haskell2010
 
 test-suite valida-test
@@ -54,8 +54,8 @@ test-suite valida-test
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-uni-patterns -Wmissed-specialisations -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.13 && <5
-    , smallcheck
+      base >=4.12 && <5
+    , smallcheck >=1.2.0
     , tasty
     , tasty-hunit
     , tasty-quickcheck

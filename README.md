@@ -1,6 +1,8 @@
 # Valida
 Simple, elegant, applicative validation for product types - batteries included!
 
+This is a dependency-less version of [valida](https://hackage.haskell.org/package/valida).
+
 Read the documentation on [hackage](https://hackage.haskell.org/package/valida-base).
 
 # Highlights
@@ -197,7 +199,7 @@ Similarly, `labelV` (or `<??>`) can be used to relabel the error value of an ent
 ## Wait, couldn't this be done using contravariant functors?
 Yes! The concept of *keeping the input of a `Validator`* set to the same product type, but *letting it validate a specific field* of said input, can be generalized to contravariant functors. The `Validator` type looks like- `Validator e inp a`, to keep applicative composition working, the `inp` needs to stay the same - but each validator within said composition should also be able to *consume* a specific part of the `inp`. `ValidationRule` itself, is the typical example of a contravariant functor as well. It's essentially a specialized predicate function- `a -> Validation e ()`. The `verify` function simply combines these 2 *potentially generalizable* contravariant functors, into a very specialized usecase.
 
-I do think adding instances for actual generalized contravariant functors/profunctors for `ValidationRule` and `Validator`, *could* be more powerful, while also being able to provide the same specialized functions. However, I've refrained from doing so as I didn't want to pull in the extra dependencies. I think the separation of `ValidationRule` and `Validator`, combined with the provided functions, *should* be able to reliably, and elegantly model any scenario of building a validator. I have yet to find a usecase where the generalized contravariant instances *would be significantly useful*. But it could certainly be more idiomatic for haskell. I may consider creating a package that *does* go the contravariant/profunctor route though.
+For a version of `Valida` that implements `Profunctor` and hence uses this generalized contravariance - check out [valida](https://hackage.haskell.org/package/valida)!
 
 # Comparison and Motivation
 The concept of the `Validation` data type used in this package isn't new. It's also used in the following packages-

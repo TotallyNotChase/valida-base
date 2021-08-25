@@ -2,7 +2,7 @@
 
 {- |
 Module      : Valida
-Description : Simple applicative validation for product types, batteries included!
+Description : Primary Valida module, exporting everything needed to build validators.
 Copyright   : (c) TotallyNotChase, 2021
 License     : MIT
 Maintainer  : totallynotchase42@gmail.com
@@ -126,7 +126,7 @@ labelV :: e -> Validator x inp a -> Validator e inp a
 labelV err (Validator v) = Validator $ first (const err) . v
 
 -- | A synonym for 'labelV' with its arguments flipped.
-infix 6 <??>
+infix 0 <??>
 
 (<??>) :: Validator x inp a -> e -> Validator e inp a
 (<??>) = flip labelV

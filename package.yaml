@@ -1,5 +1,5 @@
 name:                valida-base
-version:             0.1.1
+version:             0.2.0
 github:              "TotallyNotChase/valida-base"
 license:             MIT
 author:              "Chase"
@@ -17,7 +17,7 @@ description:
   This is a zero dependency version of the valida package. It is equivalent to valida == 0.1.0. Check out the README at github <https://github.com/TotallyNotChase/valida-base#readme>!
 
 dependencies:
-- base >= 4.13 && < 5
+- base >= 4.12 && < 5
 
 ghc-options:
 - -Wall
@@ -50,5 +50,5 @@ tests:
     - tasty-hunit
     - tasty-quickcheck
     - tasty-smallcheck
-    - smallcheck
+    - smallcheck >= 1.2.0
     - valida-base
